@@ -28,4 +28,4 @@ steps:
   inputs:
     azureSubscription: 'intern-cicd-arm-connection'   # ganti sesuai nama service connection ARM yang barusan berhasil
     appName: 'intern-cicd-webapp'
-    containers: '$(intern-cicd-acr).azurecr.io/$(imageName):$(imageTag)'
+    containers: '$(acrName).azurecr.io/$(imageName):$(imageTag)'
