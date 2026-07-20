@@ -15,7 +15,7 @@ steps:
 - task: Docker@2
   displayName: Build and push image
   inputs:
-    containerRegistry: 'interncicdacr-connection'   # nama service connection Docker Registry yang barusan kamu buat
+    containerRegistry: 'intern-cicd-acr-connection'   # nama service connection Docker Registry yang barusan kamu buat
     repository: '$(imageName)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
@@ -26,6 +26,6 @@ steps:
 - task: AzureWebAppContainer@1
   displayName: Deploy to App Service
   inputs:
-    azureSubscription: 'NAMA-ARM-CONNECTION-KAMU'   # ganti sesuai nama service connection ARM yang barusan berhasil
+    azureSubscription: 'intern-cicd-arm-connection'   # ganti sesuai nama service connection ARM yang barusan berhasil
     appName: 'intern-cicd-webapp'
     containers: '$(intern-cicd-acr).azurecr.io/$(imageName):$(imageTag)'
