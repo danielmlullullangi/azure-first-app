@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello dari CI/CD Pipeline Internship Project!'
+    return 'Selamat ya! Kamu telah menyelesaikan project CI/CD menggunakan Azure... Yeayy :)'
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
